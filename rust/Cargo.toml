@@ -1,0 +1,12 @@
+[package]
+name = "aoc2025"
+version = "0.1.0"
+edition = "2025"
+
+[[bin]]
+
+
+[dependencies]
+rand = "0.8.5"
+num-traits = "0.2"
+itertools = "0.13.0"
