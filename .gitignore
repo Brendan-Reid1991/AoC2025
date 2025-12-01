@@ -1,0 +1,11 @@
+.vscode/
+cpp/build/
+*.0
+*.out
+*.a
+*.so
+
+rust/target/
+Cargo.lock
+
+.DS_Store
