@@ -4,7 +4,7 @@ test: build
 	./build/tests
 
 build:
-	cmake --build build
+	cmake --build ../build
 
 clean:
 	rm -rf build/*

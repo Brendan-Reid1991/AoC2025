@@ -7,7 +7,7 @@
 
 using StringInput = std::vector<std::string>;
 
-inline std::string PuzzleFolder = "../puzzle_input/";
+inline std::string PuzzleFolder = "puzzle_input/";
 
 inline std::string Pathway(uint day) {
   return PuzzleFolder + "day" + std::to_string(day) + ".txt";
