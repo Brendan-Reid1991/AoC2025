@@ -2,20 +2,21 @@
 #include <iostream>
 
 int main() {
-  PuzzleInput<Day1Line> inputs = parse_day_1();
-  int current_position = 50;
-  int count_zeros = 0;
-  for (const auto &[direction, value] : inputs) {
-    if (direction == 'R') {
-      current_position -= value;
-    } else {
-      current_position += value;
+  PuzzleInput<Day1T> inputs = parse_day_1();
+  int position = 50;
+  int hits_zero = 0;
+  int new_position = 0;
+  for (const auto &value : inputs) {
+    hits_zero += std::abs(value) / 100;
+    new_position = ((position + value) % 100 + 100) % 100;
+    if (position != 0 &&
+        ((value > 0 && new_position < position) ||
+         (value < 0 && new_position > position) ||
+         new_position == 0)) {
+        hits_zero += 1;
     }
-    current_position = (current_position + 100) % 100;
-    if (current_position == 0) {
-      count_zeros += 1;
-    }
+    position = new_position;
   }
-  std::cout << count_zeros << std::endl;
+  std::cout << hits_zero << std::endl;
   return 0;
 }

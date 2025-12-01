@@ -2,15 +2,15 @@
 #include "reader.h"
 #include <utility>
 
-using Day1Line = std::pair<char, int>;
+using Day1T = int;
 
-inline PuzzleInput<Day1Line> parse_day_1() {
+inline PuzzleInput<Day1T> parse_day_1() {
   StringInput to_be_parsed = read_puzzle_input(1);
-  PuzzleInput<Day1Line> parsed;
+  PuzzleInput<Day1T> parsed;
   for (const auto &line : to_be_parsed) {
     char direction = line[0];
     int value = std::stoi(line.substr(1));
-    parsed.push_back({direction, value});
+    parsed.push_back((direction == 'R') ? -value : value);
   }
   return parsed;
 }
