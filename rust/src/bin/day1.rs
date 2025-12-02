@@ -1,5 +1,23 @@
+/// The file implements the logic for day 1.
+
 use aoc2025::parsers::{parse_day_1, Day1T};
 
+/// Iterate through the input for day 1. 
+/// 
+/// For each value, determine how mnay full rotations it 
+/// encurs and add that to the `hits_zero` integer. 
+/// 
+/// Then, add on the remaining ticks (i.e. R131 is equivalent
+/// to R31, plus one full rotation).
+/// 
+/// After determining the final position of the dial, determine if that
+/// final movement cause one more crossing of zero, or if the dial
+/// landed on zero.
+/// 
+/// If the dial was already on zero and then lands on zero, this is caught
+/// in the full rotations. 
+/// 
+/// The result is printed to std::out.
 fn main() {
     let rotations: Day1T = parse_day_1();
     let mut position: i32 = 50;
