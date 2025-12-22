@@ -10,3 +10,5 @@ rust/target/
 Cargo.lock
 
 .DS_Store
+
+.claude/
