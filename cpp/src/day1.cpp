@@ -11,9 +11,8 @@ int main() {
     new_position = ((position + value) % 100 + 100) % 100;
     if (position != 0 &&
         ((value > 0 && new_position < position) ||
-         (value < 0 && new_position > position) ||
-         new_position == 0)) {
-        hits_zero += 1;
+         (value < 0 && new_position > position) || new_position == 0)) {
+      hits_zero += 1;
     }
     position = new_position;
   }
